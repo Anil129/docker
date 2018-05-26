@@ -13,5 +13,5 @@ ENV CATALINA_HOME /tomcat
 RUN echo 'export PATH=$PATH:${JAVA_HOME}/bin' >> ~/.bashrc && \
     echo 'export PATH=$PATH:${CATALINA_HOME}/bin' >> ~/.bashrc
 EXPOSE ${http_port}
-CMD ["/script.sh"]
+ENTRYPOINT ["/script.sh"]
 
