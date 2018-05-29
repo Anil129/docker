@@ -11,7 +11,7 @@ adm1=admin-gui
 # adm2=admin-script
 
 pass=`openssl rand -base64 10 | cut -b -10`
-echo '$pass' > adminPassword
+echo ${pass} > adminPassword
 sed -i 's/<\/tomcat-users>//' ${CATALINA_HOME}/conf/tomcat-users.xml
 echo '<role rolename="'$man1'"/>' >> ${CATALINA_HOME}/conf/tomcat-users.xml
 # echo '<role rolename="'$man2'"/>' >> ${CATALINA_HOME}/conf/tomcat-users.xml
